@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMZ - Time Zone Converter</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Luxon.js for time zone management -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-globe-americas"></i> TMZ - Time Zone Manager</h1>
+            <p>Your ultimate tool for time zone conversions</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Feature C: My Local Time -->
+        <section id="local-time-section" class="card">
+            <div class="section-header">
+                <h2><i class="fas fa-clock"></i> My Local Time</h2>
+                <div class="divider"></div>
+            </div>
+            <div id="local-time-display" class="time-display">
+                <p><i class="fas fa-spinner fa-spin"></i> Detecting your time zone...</p>
+            </div>
+            <button id="use-local-time-btn" class="btn btn-primary">
+                <i class="fas fa-location-arrow"></i> Use My Location
+            </button>
+        </section>
+
+        <!-- Feature A: Instant Lookup -->
+        <section id="time-lookup-section" class="card">
+            <div class="section-header">
+                <h2><i class="fas fa-search"></i> What time is it in...?</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="search-container">
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt input-icon"></i>
+                    <input type="text" id="location-search" placeholder="Enter a city or country..." autocomplete="off">
+                </div>
+                <div id="autocomplete-suggestions" class="suggestions"></div>
+            </div>
+            <div id="lookup-results" class="results-container">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Feature B: Time Converter -->
+        <section id="time-converter-section" class="card">
+            <div class="section-header">
+                <h2><i class="fas fa-exchange-alt"></i> Time Converter</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="converter-container">
+                <div class="time-input-group">
+                    <h3><i class="fas fa-arrow-right"></i> From Location (A)</h3>
+                    <div class="input-group">
+                        <i class="fas fa-map-marker-alt input-icon"></i>
+                        <input type="text" id="from-location" placeholder="Select location..." autocomplete="off">
+                    </div>
+                    <div id="from-autocomplete" class="suggestions"></div>
+                    <div class="date-time-container">
+                        <div class="input-group">
+                            <i class="fas fa-calendar-alt input-icon"></i>
+                            <input type="date" id="from-date">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-clock input-icon"></i>
+                            <input type="time" id="from-time">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="time-input-group">
+                    <h3><i class="fas fa-arrow-left"></i> To Location (B)</h3>
+                    <div class="input-group">
+                        <i class="fas fa-map-marker-alt input-icon"></i>
+                        <input type="text" id="to-location" placeholder="Select location..." autocomplete="off">
+                    </div>
+                    <div id="to-autocomplete" class="suggestions"></div>
+                </div>
+            </div>
+            <div id="conversion-results" class="results-container">
+                <!-- Conversion results will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TMZ - Time Zone Manager | <i class="fas fa-lock"></i> 100% Client-Side</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
